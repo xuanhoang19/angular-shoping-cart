@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Shopping Cart</title>
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+  </head>
+  <body>
+    <main>
+      <app-cart-header [numberItems] = "numberItems"></app-cart-header>
+
+      <section class="container">
+        <app-product-list [products]="products" (onRemoveProduct)="removeProduct($event)"></app-product-list>
+      </section>
+
+      <section class="container">
+        <app-promo-code (onhandleApplyPromoCode)="handleApplyPromoCode($event)"></app-promo-code>
+        <app-cart-summary [discount] = "discount" [tax] = "tax" [subTotal]="subTotal"></app-cart-summary>
+      </section>
+    </main>
+  </body>
+</html>
